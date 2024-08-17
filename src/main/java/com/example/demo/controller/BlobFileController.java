@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 
 import com.example.demo.dto.FileListResponseDTO;
+import com.example.demo.dto.FileResponseDTO;
 import com.example.demo.service.BlobFileService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +23,16 @@ public class BlobFileController {
     @RequestMapping("/files/{containerName}")
     public ResponseEntity<FileListResponseDTO> getListOfFilesFromContainer(@PathVariable String containerName) {
         log.debug("[getListOfFilesFromContainer][START][containerName: {}]", containerName);
+        return ResponseEntity.ok(blobFileService.getListOfFiles(containerName));
+    }
 
-        List<String> listOfFiles = blobFileService.getListOfFiles(containerName);
-        FileListResponseDTO bodyResponse = FileListResponseDTO.builder()
-                .containerName(containerName)
-                .fileListSize(listOfFiles.size())
-                .fileList(listOfFiles)
-                .build();
+    @RequestMapping("/files/{containerName}/{fileName}")
+    public ResponseEntity<FileResponseDTO> getFileFromContainer(@PathVariable String containerName, @PathVariable String fileName) {
+        log.debug("[getListOfFilesFromContainer][START][containerName: {}]", containerName);
+        log.debug("[getListOfFilesFromContainer][START][fileName: {}]", fileName);
 
-        log.debug("[getListOfFilesFromContainer][END]");
-        return ResponseEntity.ok(bodyResponse);
+        String filePath = "countries";
+        return ResponseEntity.ok(blobFileService.getFileFromContainer(containerName, filePath + "/" + fileName));
     }
 
 }
