@@ -44,7 +44,7 @@ The connection string used in the previous class is retrieved from an environmen
 (application.properties):
 
 ```
-  connectionString=${AZURE_STORAGE_CONNECTION_STRING}
+  connectionString=${STORAGE_CONNECTION_STRING}
 ```
 
 ---------------------------------------------------------------------------

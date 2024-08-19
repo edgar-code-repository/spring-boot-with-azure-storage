@@ -10,7 +10,7 @@ public class SpringBootWithAzureStorageApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootWithAzureStorageApplication.class, args);
-		log.debug("[main][connectionString: {}]", System.getenv("AZURE_STORAGE_CONNECTION_STRING"));
+		log.debug("[main][connectionString: {}]", System.getenv("STORAGE_CONNECTION_STRING"));
 	}
 
 }

@@ -5,24 +5,20 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
+import lombok.ToString;
 
 @Setter
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FileListResponseDTO {
-
-    private Integer code;
-
-    private String message;
+@ToString
+public class FileRequestDTO {
 
     private String containerName;
 
-    private int blobListSize;
+    private String filePathAndName;
 
-    private List<String> blobList;
+    private String fileContent;
 
 }
