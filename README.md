@@ -79,7 +79,7 @@ needed to interact with the storage container:**
 
 ---------------------------------------------------------------------------
 
-**Code snippet that shows how to retrieve the list of elements inside the blob container:**
+**Code snippet that shows how to retrieve the content of the file as Base64:**
 
 ```
   BlobContainerClient blobContainerClient = blobServiceClient.getBlobContainerClient(containerName);
