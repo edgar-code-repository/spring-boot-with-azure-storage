@@ -48,3 +48,13 @@ The connection string used in the previous class is retrieved from an environmen
 ```
 
 ---------------------------------------------------------------------------
+
+**A few files were uploaded to an Azure Blob Container named "blob-container":**
+
+![Screenshot Container](screenshots/files-in-blob-container.png)
+
+**A list of those files is read in this endpoint:**
+
+![Screenshot Postman](screenshots/postman-files-endpoint.png)
+
+---------------------------------------------------------------------------
