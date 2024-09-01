@@ -92,3 +92,31 @@ needed to interact with the storage container:**
 ```
 
 ---------------------------------------------------------------------------
+
+**A new blob container called "new-container" is created:**
+
+![Screenshot NewBlobContainer1](screenshots/new-blob-container.png)
+
+**Then, a file called "countries.csv" is sent to the container just created:**
+
+![Screenshot Postman3](screenshots/postman-upload-to-container.png)
+
+**Now, the file uploaded is available in the new blob container:**
+
+![Screenshot NewBlobContainer2](screenshots/container-with-uploaded-file.png)
+
+---------------------------------------------------------------------------
+
+**Code snippet to upload the content of the file as Base64:**
+
+```
+
+  BlobContainerClient blobContainerClient = blobServiceClient.getBlobContainerClient(containerName);
+  BlobClient blobClient = blobContainerClient.getBlobClient(filePathAndName);
+  byte[] decodedBytes = Base64.getDecoder().decode(fileContent);
+  ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(decodedBytes);
+  blobClient.upload(byteArrayInputStream);
+
+```
+
+---------------------------------------------------------------------------
